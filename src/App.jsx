@@ -1,0 +1,12 @@
+import { RouterProvider } from 'react-router-dom';
+import { AuthProvider } from './AuthProvider';
+import { router } from './router';
+
+export default function App() {
+  return (
+    <AuthProvider>
+      {/* RouterProvider inyecta el router configurado */}
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
+}
