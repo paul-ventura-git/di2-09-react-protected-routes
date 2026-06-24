@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
-import LoginPage from './LoginPage'; // Tus páginas...
-import DashboardPage from './DashboardPage';
-import AdminPage from './AdminPage';
+import LoginPage from './pages/LoginPage'; // Tus páginas...
+import DashboardPage from './pages/DashboardPage';
+import AdminPage from './pages/AdminPage';
 import { ProtectedRoute } from './ProtectedRoute';
 
 export const router = createBrowserRouter([
@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
     element: <div>Acceso Denegado</div>,
   },
 
-  // Rutas Privadas (Usuarios y Admins)
+  // Rutas Privadas (Usuarios, Admin)
   {
     element: <ProtectedRoute allowedRoles={['admin', 'user']} />,
     children: [
