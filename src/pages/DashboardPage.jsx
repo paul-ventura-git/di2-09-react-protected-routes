@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
-import { AuthContext } from '../AuthContext';
+import { useAuth } from '../hooks/useAuth';
 
 export default function DashboardPage() {
-  const { logout } = useContext(AuthContext);
+  const { logout } = useAuth();
   return (
     <div style={{ padding: '20px' }}>
       <h1>DashboardPage</h1>

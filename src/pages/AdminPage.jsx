@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../AuthContext'; // Asegúrate de ajustar la ruta según tu estructura de carpetas
+import { useAuth } from '../hooks/useAuth';
 
 export default function AdminPage() {
-  // Extraemos la función logout del contexto de autenticación
-  const { logout } = useContext(AuthContext);
-
+  const { logout } = useAuth();
   return (
     <div style={{ padding: '20px' }}>
       <h1>AdminPage</h1>
