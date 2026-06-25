@@ -22,4 +22,4 @@ const cartSlice = createSlice({
 });
 
 export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
-export const cartReducer = cartSlice.reducer;
+export const cartReducer = cartSlice.reducer; // Exportamos el reducer para usarlo en el store

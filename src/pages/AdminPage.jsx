@@ -8,6 +8,7 @@ export default function AdminPage() {
       <p>Bienvenido al panel de administración.</p>
       
       <button 
+        className="btn btn-dark py-2 fw-semibold" 
         onClick={logout} 
       >
         Cerrar Sesión

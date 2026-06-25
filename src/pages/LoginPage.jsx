@@ -10,16 +10,16 @@ export default function LoginPage() {
   // Action del formulario
   const loginAction = async (prevState, formData) => {
     const email = formData.get('email');
-//    const password = formData.get('password');
+    const password = formData.get('password');
 
     // Caso 1: Es Admin
-    if (email === 'admin@test.com') {
+    if (email === 'admin@test.com' && password === 'admin123') {
       login({ name: 'Administrador', role: 'admin' });
       return null; 
     }
 
     // Caso 2: Es Usuario (NUEVO)
-    if (email === 'user@test.com') {
+    if (email === 'user@test.com' && password === 'user123') {
       login({ name: 'Usuario Estándar', role: 'user' });
       return null;
     }
@@ -111,8 +111,8 @@ export default function LoginPage() {
           {/* Tarjeta de ayuda para pruebas (Colores muy sutiles grisáceos) */}
           <div className="mt-4 p-3 bg-light border rounded-3 text-start">
             <span className="text-secondary d-block mb-1 small fw-bold">Cuentas de prueba:</span>
-            <code className="d-block text-dark small" style={{ fontSize: '0.85em' }}>👤 user@test.com</code>
-            <code className="d-block text-dark small" style={{ fontSize: '0.85em' }}>🛠️ admin@test.com</code>
+            <code className="d-block text-dark small" style={{ fontSize: '0.85em' }}>👤 user@test.com: user123</code>
+            <code className="d-block text-dark small" style={{ fontSize: '0.85em' }}>🛠️ admin@test.com: admin123</code>
           </div>
 
         </div>

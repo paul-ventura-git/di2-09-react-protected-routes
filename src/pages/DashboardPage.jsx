@@ -20,7 +20,7 @@ export default function DashboardPage() {
       <div style={{ padding: '20px' }}>
         <h1>DashboardPage</h1>
         <p>Bienvenido a tu panel de control.</p>
-        <button onClick={logout}>Cerrar Sesión</button>
+        <button className="btn btn-dark py-2 fw-semibold" onClick={logout}>Cerrar Sesión</button>
       </div>
       <div className="container py-5 position-relative" style={{ minHeight: '100vh' }}>
         <header className="mb-5 border-bottom pb-3">
