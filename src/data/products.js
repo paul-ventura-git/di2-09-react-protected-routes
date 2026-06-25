@@ -1,4 +1,3 @@
-// src/data/products.js
 export const products = [
   { id: 1, name: "Teclado Mecánico RGB", price: 85.00, desc: "Switches red, ideal para desarrollo nocturno." },
   { id: 2, name: "Mouse Ergonómico Inalámbrico", price: 45.50, desc: "Reduce la fatiga en jornadas largas." },

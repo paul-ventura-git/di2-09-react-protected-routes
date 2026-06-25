@@ -8,3 +8,10 @@ export function useAuth() {
   }
   return context;
 }
+
+/**
+ * useState, useEffect
+ * useContext -> AuthProvider (Authentication, Authorization, Theme:dark, Light, Language)
+ * useReducer
+ * RTK - Redux Toolkit -> Provider-REACT-REDUX (ShoppingCart, UserProfile, Notifications)
+*/

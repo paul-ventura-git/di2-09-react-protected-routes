@@ -8,7 +8,6 @@ export function AuthProvider({ children }) {
   const logout = () => setUser(null);
 
   return (
-    // Usamos el contexto importado
     <AuthContext value={{ user, login, logout }}>
       {children}
     </AuthContext>

@@ -5,7 +5,6 @@ import { router } from './router';
 export default function App() {
   return (
     <AuthProvider>
-      {/* RouterProvider inyecta el router configurado */}
       <RouterProvider router={router} />
     </AuthProvider>
   );
