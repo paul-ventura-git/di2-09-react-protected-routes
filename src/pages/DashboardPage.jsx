@@ -16,7 +16,7 @@ export default function DashboardPage() {
   // Contador total de productos agregados
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   return (
-    <>
+    <div className="container">
       <div style={{ padding: '20px' }}>
         <h1>DashboardPage</h1>
         <p>Bienvenido a tu panel de control.</p>
@@ -68,6 +68,6 @@ export default function DashboardPage() {
         {/* Componente Offcanvas Inyectado */}
         <CartOffcanvas isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       </div>
-    </>
+    </div>
   )
 }
