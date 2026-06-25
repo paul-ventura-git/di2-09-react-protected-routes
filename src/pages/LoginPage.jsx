@@ -44,7 +44,7 @@ export default function LoginPage() {
   }, [user, navigate]);
 
   return (
-    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
       <div className="card shadow-sm border-0" style={{ width: '100%', maxWidth: '420px', borderRadius: '12px' }}>
         
         {/* Encabezado de la tarjeta similar a la Tienda */}

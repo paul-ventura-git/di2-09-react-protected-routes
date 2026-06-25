@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function Header() {
+  const { user } = useContext(AuthContext);
+    const { logout } = useAuth();
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -35,15 +41,23 @@ export default function Header() {
               </li>
             </ul>
             <form className="d-flex">
-              <Link className="nav-link active" aria-current="page" to="/login">
-                Log in
-              </Link>
-              <Link className="nav-link active" aria-current="page" to="/register">
-                Register
-              </Link>
-              <Link className="nav-link active" aria-current="page" to="/register">
-                Log out
-              </Link>                            
+              {!user && (
+                <>
+                  <Link className="nav-link active" aria-current="page" to="/login">
+                    <button className="btn btn-outline-primary me-2 fw-semibold">Login</button>
+                  </Link>
+                  <Link className="nav-link active" aria-current="page" to="/register">
+                    <button className="btn btn-outline-success me-2 fw-semibold">Register</button>
+                  </Link>
+                </>
+              )}
+
+              {user && (
+                <Link className="nav-link active" aria-current="page" to="/logout">
+                  <button className="btn btn-outline-danger me-2 fw-semibold" onClick={logout}>Log out</button>
+                </Link>
+              )}
+                            
             </form>
           </div>
         </div>
