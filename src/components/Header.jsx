@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+//import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { useAuth } from '../contexts/AuthContext';
 
 export default function Header() {
-  const { user } = useContext(AuthContext);
-    const { logout } = useAuth();
+  //const { user } = useContext(AuthContext);
+  const { user, logout } = useAuth();
 
   return (
     <>
@@ -56,12 +56,21 @@ export default function Header() {
                 <Link className="nav-link active" aria-current="page" to="/logout">
                   <button className="btn btn-outline-danger me-2 fw-semibold" onClick={logout}>Log out</button>
                 </Link>
-              )}
-                            
+              )}                            
             </form>
+            
           </div>
         </div>
       </nav>
     </>
   )
 }
+/**
+ * useState, useEffect.
+ * useContext. [Estados agrupados en Contextos] : Autenticación, 
+ * useReducer. [Estados agrupados en Reducers(stores, slices, reducers, initialState)]
+ * RTK. [Redux Toolkit] : Shopping Cart
+ * 
+ * useAuth. [Custom Hook]
+ * useNavigate. [React Router]
+ */

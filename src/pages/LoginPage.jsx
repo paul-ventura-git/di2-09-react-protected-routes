@@ -61,7 +61,7 @@ export default function LoginPage() {
                 Correo Electrónico
               </label>
               <input 
-                id="email"
+                id="email999"
                 name="email" 
                 type="email" 
                 className="form-control" 
@@ -75,7 +75,7 @@ export default function LoginPage() {
                 Contraseña
               </label>
               <input 
-                id="password"
+                id="password999"
                 name="password" 
                 type="password" 
                 className="form-control" 

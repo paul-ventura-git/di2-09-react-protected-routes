@@ -17,10 +17,6 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: '/login',
-        element: <LoginPage />,
-      },
-      {
         path: '/unauthorized',
         element: <div>Acceso Denegado</div>,
       },
