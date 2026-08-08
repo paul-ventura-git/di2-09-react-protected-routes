@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 export function ThemeProvider({ children }) {
@@ -9,6 +9,13 @@ export function ThemeProvider({ children }) {
       current === 'light' ? 'dark' : 'light'
     );
   };
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-bs-theme",
+      theme
+    );
+  }, [theme]);
 
   return (
     <ThemeContext.Provider

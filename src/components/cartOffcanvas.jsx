@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../store/cartSlice';
+import { incrementByOne, decrementByOne } from "../store/cartSlice";
 
 export default function CartOffcanvas({ isOpen, onClose }) {
   const cartItems = useSelector((state) => state.cart.items);
@@ -27,11 +28,23 @@ export default function CartOffcanvas({ isOpen, onClose }) {
               <div className="flex-grow-1 overflow-y-auto">
                 {cartItems.map((item) => (
                   <div key={item.id} className="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
-                    <div>
-                      <h6 className="mb-0">{item.name}</h6>
-                      <small className="text-muted">
-                        {item.quantity} x ${item.price.toFixed(2)}
-                      </small>
+                    <div className="w-100">
+                      <h6 className="mb-0">{item.name}</h6> 
+                      <small className="text-muted" style={{ backgroundColor: 'yellow' }}>
+                        <button
+                          className="btn btn-sm btn-outline-secondary mx-2" 
+                          onClick={() => dispatch(decrementByOne(item.id))}
+                        >-
+                        </button>
+                          {item.quantity}  
+                        <button
+                          className="btn btn-sm btn-outline-secondary mx-2" 
+                          onClick={() => dispatch(incrementByOne(item.id))}
+                        >+
+                        </button>
+                        x ${item.price.toFixed(2)}
+                        <div className="fw-bold text-end">${(item.quantity * item.price).toFixed(2)}</div>
+                      </small>                      
                     </div>
                     <button 
                       className="btn btn-sm btn-outline-danger" 

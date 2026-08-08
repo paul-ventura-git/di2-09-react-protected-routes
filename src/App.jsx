@@ -1,6 +1,6 @@
 import { Outlet, RouterProvider } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthProvider';
-import { router } from './router';
+import { router } from './router/router';
 import { ThemeProvider } from './contexts/ThemeProvider';
 
 export default function App() {

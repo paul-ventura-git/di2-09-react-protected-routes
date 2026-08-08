@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 //import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { useAuth } from '../contexts/AuthContext';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default function Header() {
   //const { user } = useContext(AuthContext);
@@ -23,6 +24,9 @@ export default function Header() {
               <li className="nav-item">
                 <Link className="nav-link" to="/Gallery">Gallery</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/products">Products</Link>
+              </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
@@ -40,6 +44,7 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
+            <ThemeSwitcher />
             <form className="d-flex">
               {!user && (
                 <>
