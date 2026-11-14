@@ -49,18 +49,8 @@ export const router = createBrowserRouter([
           {
             path: '/dashboard',
             element: <DashboardPage />,
-          },
-          {
-            path: '/products',
-            element: <Products />,
-            loader: productsLoader,
-            children: [
-              { path: '/products/:id', element: <ProductDetails />, loader: productDetailsLoader},
-              { path: '/products/create-product', element: <FormNewProduct />, action: newProductAction },          
-              { path: '/products/edit-product/:id', element: <FormEditProduct />, loader: productEditLoader, action: editProductAction },
-              { path: '/products/delete-product/:id', element: <DeleteProduct />, loader: deleteProductLoader, action: deleteProductAction },
-            ],
-          },
+          }
+
           // Puedes agregar más rutas aquí que compartan este nivel de acceso
         ],
       },
@@ -73,6 +63,17 @@ export const router = createBrowserRouter([
             path: '/admin',
             element: <AdminPage />,
           },
+          {
+            path: '/products',
+            element: <Products />,
+            loader: productsLoader,
+            children: [
+              { path: '/products/:id', element: <ProductDetails />, loader: productDetailsLoader},
+              { path: '/products/create-product', element: <FormNewProduct />, action: newProductAction },          
+              { path: '/products/edit-product/:id', element: <FormEditProduct />, loader: productEditLoader, action: editProductAction },
+              { path: '/products/delete-product/:id', element: <DeleteProduct />, loader: deleteProductLoader, action: deleteProductAction },
+            ],
+          }
         ],
       }
     ]
